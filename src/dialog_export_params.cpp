@@ -65,7 +65,7 @@ DialogExportOptions::DialogExportOptions( Project * project, const Lyrics& lyric
     boxVideoResolution->addItem( "HD 1280x720", "1280x720" );
     boxVideoResolution->addItem( "Full HD 1920x1080", "1920x1080" );
 
-    if ( pSettings->isRegistered() )
+    if ( !pSettings->isRegistered() )
         boxVideoResolution->addItem( "Ultra HD 3840x2160", "3840x2160" );
 
     // Video resolution combobox
@@ -152,7 +152,7 @@ DialogExportOptions::DialogExportOptions( Project * project, const Lyrics& lyric
 	leTitle->setText( m_project->tag( Project::Tag_Title, "") );
 	leArtist->setText( m_project->tag( Project::Tag_Artist, "") );
 
-    if ( pSettings->isRegistered() )
+    if ( !pSettings->isRegistered() )
 	{
 		leTitleCreatedBy->setText( QString("Created by %1<br>http://www.ulduzsoft.com") .arg(APP_NAME) );
 	}
